@@ -1,0 +1,39 @@
+{
+    "movies": [
+        {
+            "id": 1,
+            "title": "The Lion King",
+            "year": "2019",
+            "runtime": "118 min",
+            "poster": "https://m.media-amazon.com/images/S/aplus-media/sota/f9640e41-364b-46b5-b3c2-3062a4e366ca.__CR0,75,977,977_PT0_SX300_V1___.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Mowgli: Legend of the Jungle",
+            "year": "2018",
+            "runtime": "104 min",
+            "poster": "https://i.ebayimg.com/images/g/aR4AAOSwpRpgUarR/s-l1600.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Doctor Strange",
+            "year": "2016",
+            "runtime": "115 min",
+            "poster": "https://m.media-amazon.com/images/I/813rdLybZEL._SL1500_.jpg"
+        },
+        {
+            "id": 4,
+            "title": "John Wick",
+            "year": "2014",
+            "runtime": "101 min",
+            "poster": "https://cdn-amz.woka.io/images/I/4191V0QIFmL.jpg"
+        },
+        {
+            "id": 5,
+            "title": "The Notebook",
+            "year": "2004",
+            "runtime": "123 min",
+            "poster": "https://www.moviemeter.com/images/cover/18000/18062.jpg?cb=1499414045"
+        }
+    ]
+}

@@ -4,7 +4,8 @@ export const useMoviesStore = defineStore('movies', {
     state: () => ({ 
         movies: [],
         isLoading: false,
-        query: ''
+        query: '',
+        singleMovie: {}
      }),
     getters: {
         
@@ -17,5 +18,15 @@ export const useMoviesStore = defineStore('movies', {
             this.movies = response;
             this.isLoading = false;
         },
+        async getSingleMovie(id) {
+            this.isLoading = true;
+            const result = await fetch(`http://localhost:8000/movies/${parseInt(id)}`);
+            if (result.status === 404) {
+                this.router.push({ name: 'NotFound' })
+            }
+            const response = await result.json();
+            this.singleMovie = response;
+            this.isLoading = false;
+        }
     },
 })

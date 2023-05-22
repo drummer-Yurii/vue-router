@@ -2,12 +2,19 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 
+const props = defineProps({
+    id: {
+        type: String,
+        required: true
+    }
+})
+
 const queryMovie = ref({});
 const isLoading = ref(true);
 const route = useRoute();
 
 onMounted(async () => {
-    const result = await fetch(`http://localhost:8000/movies/${route.params.id}`);
+    const result = await fetch(`http://localhost:8000/movies/${parseInt(props.id)}`);
     const response = await result.json();
     queryMovie.value = response;
     isLoading.value = false;

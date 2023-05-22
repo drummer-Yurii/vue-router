@@ -1,5 +1,12 @@
 <script setup>
+import { watchEffect } from 'vue';
+import { useMoviesStore } from '../stores/movies';
 
+const moviesStore = useMoviesStore();
+
+watchEffect(() => {
+  moviesStore.getMovies(moviesStore.query);
+});
 </script>
 
 <template>
@@ -96,7 +103,7 @@
               <input
                 type="text"
                 id="search-navbar"
-                
+                v-model="moviesStore.query"
                 class="
               block
               p-2
@@ -237,19 +244,20 @@
                 <router-link
                   :to="{ name: 'Home' }"
                   class="
-                block
-                py-2
-                pr-4
-                pl-3
-                text-slate-700
-                rounded
-                md:bg-transparent md:p-0
-                dark:text-white
-              "
-                  active-class="text-blue-500"
-                  aria-current="page"
-                  >Home</router-link
+                    block
+                    py-2
+                    pr-4
+                    pl-3
+                    text-slate-700
+                    rounded
+                    md:bg-transparent md:p-0
+                    dark:text-white
+                  "
+                      active-class="text-blue-500"
+                      aria-current="page"
                 >
+                  Home
+                </router-link>
               </li>
               <li>
                 <router-link
